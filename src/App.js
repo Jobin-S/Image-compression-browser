@@ -5,7 +5,7 @@ import imageCompression from 'browser-image-compression';
 function App() {
 
   const [files, setFiles] = useState([])
-  // const [size, setSize] = useState(450)
+  const [maxSize, setMaxSize] = useState(0.5)
   // const [accuracy, setAccuracy] = useState(0.5)
   // const [scale, setscale] = useState(0.5)
 
@@ -16,7 +16,7 @@ function App() {
 
 
         const options = {
-          maxSizeMB: 0.5,
+          maxSizeMB: maxSize,
           // maxWidthOrHeight: 1920,
           useWebWorker: true,
         }
@@ -52,10 +52,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Image Compression for Ayush 🚀</h1>
-        {/* <label>Size
-          <input type="number" value={size} onChange={(e) => setSize(Number(e.target.value))} /> <br />
+        <label>max Size - {maxSize} MB
+          <input type="number" value={maxSize} onChange={(e) => setMaxSize(Number(e.target.value))} /> <br />
         </label>
-        <label>Accuracy
+       {/*  <label>Accuracy
           <input type="number" value={accuracy} onChange={(e) => setAccuracy(Number(e.target.value))} /> <br />
         </label>
         <label>Scale
