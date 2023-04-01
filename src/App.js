@@ -14,7 +14,7 @@ function App() {
       for (var i = 0; i <= files.length; i++) {
         const file = files.item(i)
 
-        imageConversion.compressAccurately(file, {
+        imageConversion.compress(file, {
           size, accuracy, scale, type: file?.name || "image/png"
         }).then((blob) => {
           const url = window.URL.createObjectURL(blob);
